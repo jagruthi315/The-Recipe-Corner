@@ -1,0 +1,130 @@
+
+/* -----------------testimonials start here---------------------------- */
+
+/* -----------------testimonials start here---------------------------- */
+
+#theme-toggle{
+  margin-left:1rem;
+}
+
+
+.testimonials-section {
+  padding: 50px 0 100px;
+  align-items: center;
+}
+
+.section-title {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 4rem;
+}
+
+.testimonials-section .slider-wrapper {
+  overflow: hidden;
+  margin: 0 60px 50px;
+}
+
+.testimonials-section .testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.testimonials-section .testimonial .name {
+  margin-bottom: 16px;
+}
+
+.testimonials-section .testimonial .feedback {
+  line-height: 25px;
+}
+
+.testimonials-section .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+  background: orangered;
+}
+
+.testimonials-section .swiper-slide-button {
+  margin-top: 50px;
+  color: gold;
+  transition: 0.3s ease;
+}
+
+.testimonials-section .swiper-slide-button:hover {
+  color: orangered;
+}
+
+.testimonials-section .testimonial .user-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+/* ----------------- Responsive Fixes ---------------------------- */
+
+@media screen and (max-width: 768px) {
+  .testimonials-section {
+    padding: 40px 10px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin: 2rem 0;
+  }
+
+  .testimonials-section .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+
+  .testimonials-section .testimonial {
+    padding: 20px;
+  }
+
+  .testimonials-section .testimonial .user-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .testimonials-section .testimonial .name {
+    font-size: 1.2rem;
+  }
+
+  .testimonials-section .testimonial .feedback {
+    font-size: 0.95rem;
+  }
+
+  .swiper-slide-button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonials-section .testimonial {
+    padding: 15px;
+  }
+
+  .testimonials-section .testimonial .user-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .testimonials-section .testimonial .name {
+    font-size: 1rem;
+  }
+
+  .testimonials-section .testimonial .feedback {
+    font-size: 0.9rem;
+  }
+}
+

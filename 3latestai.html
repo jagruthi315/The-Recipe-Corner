@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ingredients to Recipe page</title>
+  <link rel="icon" href="./images/recipe.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: #111;
+      --card-bg: gold;
+      --ingredient-bg: gold;
+      --ingredient-color: #1b4332;
+    }
+
+    body.dark {
+      --bg-color: black;
+      --text-color: #eee;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #error-message {
+      color: red;
+      font-weight: bold;
+      margin: 6px 0 12px;
+      display: none;
+    }
+
+    button {
+      background-color: orange;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      border: none;
+    }
+
+    button:active {
+      background-color: orangered;
+    }
+
+    #results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .meal {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .meal img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .meal-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meal h3 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .ingredients-box {
+      background-color: rgb(248, 235, 152);
+      color: orangered;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    body.dark .ingredients-box {
+      background-color: black;
+    }
+
+    .instructions-box {
+      background-color: #f8f16d;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-y: auto;
+      max-height: 250px;
+      color: var(--text-color);
+    }
+
+    body.dark .instructions-box {
+      background-color: #000;
+    }
+
+    .ingredients span {
+      display: inline-block;
+      background-color: var(--ingredient-bg);
+      color: var(--ingredient-color);
+      padding: 5px 10px;
+      margin: 4px;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      background-color: #ffd54f;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .tag.veg {
+      background-color: #81c784;
+      color: #1b5e20;
+    }
+
+    .tag.nonveg {
+      background-color: #ef9a9a;
+      color: #b71c1c;
+    }
+
+    .toggle-ingredients-btn {
+      background-color: #ff9800;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .goback {
+      text-decoration: none;
+      background-color: orange;
+      color: white;
+      border: 2px solid orange;
+      padding: 6px 20px;
+      border-radius: 30px;
+    }
+
+    #theme-toggle {
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    #theme-toggle svg {
+      width: 100%;
+      height: 100%;
+      display: none;
+      transition: fill 0.3s;
+    }
+
+    body:not(.dark) #theme-toggle .moon {
+      display: block;
+      fill: black;
+    }
+
+    body.dark #theme-toggle .sun {
+      display: block;
+      fill: white;
+    }
+
+
+
+    /* ------------ Tablet Devices (width: 768px and below) ------------ */
+@media (max-width: 768px) {
+  input,
+  button {
+    font-size: 14px;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  #results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal {
+    max-width: 100%;
+  }
+}
+
+/* ------------ Mobile Devices (width: 480px and below) ------------ */
+@media (max-width: 480px) {
+  input,
+  button {
+    font-size: 13px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+  }
+
+  .meal {
+    max-width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<a href="#" class="goback" onclick="goBack()">Go Back</a>
+<br><br>
+
+<h2>Enter Ingredients (comma-separated):</h2>
+<input type="text" id="ingredientsInput" placeholder="e.g. milk, sugar, coffee">
+<p id="error-message">Please enter the ingredients.</p>
+<button onclick="findMeals()">Find Recipes</button>
+
+<div id="results"></div>
+
+<script>
+  function goBack() {
+    const from = localStorage.getItem("cameFrom") || "index.html";
+    window.location.href = from;
+  }
+
+  function toggleIngredients(id, btn) {
+    const box = document.getElementById(id);
+    const isVisible = box.style.display === "block";
+    box.style.display = isVisible ? "none" : "block";
+    btn.textContent = isVisible ? "Show Ingredients" : "Hide Ingredients";
+  }
+
+  document.getElementById("ingredientsInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      findMeals();
+    }
+  });
+
+  async function findMeals() {
+    const input = document.getElementById("ingredientsInput").value.trim();
+    const errorMsg = document.getElementById("error-message");
+    const resultsDiv = document.getElementById("results");
+
+    if (!input) {
+      errorMsg.style.display = "block";
+      resultsDiv.innerHTML = "";
+      return;
+    } else {
+      errorMsg.style.display = "none";
+    }
+
+    const ingredients = input.split(',').map(i => i.trim().toLowerCase()).filter(i => i);
+    resultsDiv.innerHTML = "<p><i>Searching for delicious meals...</i></p>";
+
+    try {
+      const mealSets = await Promise.all(ingredients.map(async (ing) => {
+        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`);
+        const data = await res.json();
+        return data.meals || [];
+      }));
+
+      const intersected = mealSets.reduce((acc, set, idx) => {
+        const ids = set.map(meal => meal.idMeal);
+        return idx === 0 ? ids : acc.filter(id => ids.includes(id));
+      }, []);
+
+      let apiMeals = [];
+
+      if (intersected.length > 0) {
+        apiMeals = await Promise.all(intersected.map(async (id) => {
+          const res = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+          const data = await res.json();
+          return data.meals[0];
+        }));
+      }
+
+      const customMatches = typeof customRecipes !== "undefined"
+        ? customRecipes.filter(meal =>
+            ingredients.every(ing =>
+              meal.ingredients?.some(item => item.toLowerCase().includes(ing))
+            )
+          )
+        : [];
+
+      const combinedMeals = [...apiMeals, ...customMatches];
+
+      if (combinedMeals.length === 0) {
+        resultsDiv.innerHTML = "<p><i>No meals found with those ingredients.</i></p>";
+        return;
+      }
+
+      resultsDiv.innerHTML = "";
+
+      combinedMeals.forEach((meal, index) => {
+        const mealDiv = document.createElement("div");
+        mealDiv.className = "meal";
+
+        const ingredientList = meal.ingredients
+          ? meal.ingredients
+          : Array.from({ length: 20 }, (_, i) => {
+              const ing = meal[`strIngredient${i + 1}`];
+              const measure = meal[`strMeasure${i + 1}`];
+              return ing ? `${measure || ""} ${ing}`.trim() : null;
+            }).filter(Boolean);
+
+        const nonVegItems = ['chicken', 'beef', 'lamb', 'pork', 'fish', 'mutton', 'shrimp', 'crab', 'egg'];
+        const isNonVeg = ingredientList.some(item =>
+          nonVegItems.some(word => item.toLowerCase().includes(word))
+        );
+        const tag = isNonVeg
+          ? '<span class="tag nonveg">Non-Veg</span>'
+          : '<span class="tag veg">Veg</span>';
+
+        const uniqueId = `ingredients-box-${index}`;
+
+        mealDiv.innerHTML = `
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+          <div class="meal-content">
+            <h3>${meal.strMeal}</h3>
+            ${tag}
+            <button class="toggle-ingredients-btn" onclick="toggleIngredients('${uniqueId}', this)">Show Ingredients</button>
+            <div class="ingredients-box" id="${uniqueId}">
+              <strong>Ingredients:</strong>
+              <div class="ingredients">
+                ${ingredientList.map(item => `<span>${item}</span>`).join('')}
+              </div>
+            </div>
+            <div class="instructions-box">
+              <strong>Instructions:</strong>
+              <ul>
+                ${(meal.strInstructions || "")
+                  .split(/[\.\n]+/)
+                  .map(step => step.trim())
+                  .filter(step => step.length > 0)
+                  .map(step => `<li>${step}.</li>`)
+                  .join('')}
+              </ul>
+            </div>
+          </div>
+        `;
+        resultsDiv.appendChild(mealDiv);
+      });
+
+    } catch (err) {
+      console.error(err);
+      resultsDiv.innerHTML = "<p><i>Error fetching meals. Please try again later.</i></p>";
+    }
+  }
+</script>
+
+<script src="customRecipesTop500.js"></script>
+<script src="darkmode.js"></script>
+
+
+</body>
+</html>

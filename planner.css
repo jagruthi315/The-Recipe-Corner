@@ -1,0 +1,1298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+/* @media screen and (max-width: 1024px) {
+  .nav__menu {
+    display: inline-block;
+    color: #614122; /* Ensure the color is white */
+/* cursor: pointer;
+  } */
+
+/* .nav__close {
+    display: hidden;
+  } */
+
+/* #nav-toggle {
+    right: 1rem;
+    margin-right: 0;
+    align-items: flex-end;
+  }
+
+   #nav-close{
+    right: 1rem;
+    margin-right: 0;
+    align-items: flex-end;
+    color: #614122;
+  } */
+
+/* .nav__items {
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    right: 0;
+    width: 12rem;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    display: none;
+  } */
+
+/* .nav__items li {
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: -2rem 3rem 7rem rgba(0, 0, 0, 0.7);
+    border-top: 1px;
+    animation: animateDropdown 400ms 0s forwards;
+    opacity: 0;
+    transform-origin: top;
+  } */
+
+/*    
+   .nav__items li:nth-child(2){
+    animation-delay:200ms;
+   }
+   .nav__items li:nth-child(3){
+    animation-delay:400ms;
+   }
+   .nav__items li:nth-child(4){
+    animation-delay:600ms;
+   }
+   .nav__items li:nth-child(5){
+    animation-delay:800ms;
+   } */
+
+/* nav dropdown animation */
+
+/* @keyframes animateDropdown {
+    0% {
+      transform: rotateX("90deg");
+    }
+    100% {
+      transform: rotateX("0deg");
+      opacity: 1;
+    }
+  }
+
+  .nav__items li a {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-gray-900);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__close {
+    display: none;
+  }
+} */
+*/ */ .body {
+  color: #2b1d0f;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.nav__logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  /* text-transform: uppercase; */
+  color: #614122;
+  /* text-decoration: none; */
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style-type: none;
+  margin-right: 10px;
+}
+.nav__items a {
+  text-decoration: none;
+  color: #614122;
+  font-weight: 600;
+  font-size: medium;
+  font-style: italic;
+}
+
+.nav__items .recipes {
+  padding: 5px;
+
+  &:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(252, 139, 14);
+    color: rgb(255, 255, 255);
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+.nav__items .planner {
+  padding: 5px;
+
+  &:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(252, 139, 14);
+    color: white;
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+
+.nav__items .testimonials {
+  padding: 5px;
+
+  &:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(252, 139, 14);
+    color: white;
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+
+.nav__items .about {
+  padding: 5px;
+
+  &:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(252, 139, 14);
+    color: white;
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+.nav__items .contact {
+  padding: 5px;
+
+  &:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgb(252, 139, 14);
+    color: white;
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+.header nav {
+  background-color: gold;
+  /* color:  rgb(252, 139, 14); */
+  color: #614122;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.header nav h1 {
+  font-size: 26px;
+  font-weight: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* header nav form */
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* we can also declare the below one in this way- form input[type="text"] */
+.form input,
+.button {
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#theme-toggle {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: none;
+  margin-top: 6px;
+}
+
+.moon {
+  background-color: white;
+  border-radius: 60px;
+  margin-right: 20px;
+  height: 35px;
+  width: 35px;
+  fill: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    fill: white;
+    cursor: pointer;
+
+    background-color: rgb(59, 20, 213);
+    /* rgb(40, 25, 3) */
+    outline: solid 2px white;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    outline: 2px solid rgb(59, 20, 213);
+    outline-offset: 1px;
+    /* box-shadow: 0 0 15px rgb(59, 20, 213); */
+  }
+}
+
+.sun {
+  display: none;
+}
+
+body.dark {
+  color: rgb(255, 255, 255);
+  background-color: black;
+
+  header nav {
+    background-color: gold;
+    /* color: white; */
+    color: #614122;
+  }
+
+  #search {
+    background-color: black;
+    color: rgb(252, 139, 14);
+    border-radius: 16px;
+    margin-right: 20px;
+
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background-color: rgb(255, 148, 25);
+      outline: solid 2px black;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    &:active {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      outline: 2px solid goldenrod;
+      outline-offset: 1px;
+    }
+  }
+
+  .recipe {
+    cursor: pointer;
+
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 6px solid gold;
+    border-radius: 6px;
+    box-shadow: 0;
+    max-width: 400px;
+    margin-top: 20px;
+    place-content: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+    /* Optimize for performance */
+
+    &:hover {
+      transform: translateY(-10px);
+      /* Move the card upward */
+      box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.4);
+      /* Enhance shadow for depth */
+
+      transition: border-color background-color 0.2s ease-in;
+      border-color: white;
+      background-color: gold;
+      color: #614122;
+    }
+
+    button {
+      height: 60px;
+      border: 2px solid;
+      border: none;
+      background-color: rgb(252, 139, 14);
+      color: black;
+      font-size: large;
+      font-family: cursive;
+      border-radius: 16px;
+    }
+  }
+
+  .recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background-color: black;
+    border: 10px solid gold;
+    border-radius: 16px;
+    width: 80%;
+    height: 60%;
+    font-size: 20px;
+    background-size: auto;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+  }
+}
+
+#search,
+.button {
+  border-radius: 16px;
+  margin-right: 20px;
+  color: white;
+  background-color: rgb(252, 139, 14);
+
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(252, 139, 14);
+
+    /* outline: solid 2px rgb(252, 139, 14); */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+    outline-offset: 1px;
+    outline: solid 2px rgb(252, 139, 14);
+  }
+}
+
+.sun {
+  background-color: black;
+  border-radius: 60px;
+  margin-right: 2px;
+  height: 35px;
+  width: 35px;
+  fill: orange;
+  /* Changes the main sun color */
+  stroke: red;
+  /* Changes the color of lines or rays */
+
+  &:hover {
+    cursor: pointer;
+    fill: yellow;
+    stroke: red;
+    background-color: rgb(55, 190, 244);
+    /* rgb(40, 25, 3) */
+    outline: solid 2px white;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:active {
+    outline: 2px solid rgb(55, 190, 244);
+    outline-offset: 2px;
+  }
+
+  .recipe-details::-webkit-scrollbar-thumb {
+    background: rgb(252, 139, 14);
+    /* background:rgb(252, 139, 14) ; */
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    /*  we are here using border radius but if we make scrollbar for body we won't be using a scroll bar */
+  }
+}
+
+.recipe {
+  cursor: pointer;
+
+  overflow: hidden;
+  background-color: gold;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  border: 6px solid gold;
+  border-radius: 6px;
+  box-shadow: 0;
+  max-width: 400px;
+  margin-top: 20px;
+  place-content: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  /* Optimize for performance */
+
+  &:hover {
+    transform: translateY(-10px);
+    /* Move the card upward */
+    border: 6px solid rgb(252, 139, 14);
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.4);
+    /* Enhance shadow for depth */
+  }
+
+  /* &:active{
+         border: 6px solid orange;
+         transition: border-color 0.3s ease;
+     } */
+  h3 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 5px 0;
+  }
+
+  button {
+    margin: 5px;
+    height: 60px;
+
+    width: 200px;
+    border: 2px solid;
+    border: none;
+    background-color: rgb(252, 139, 14);
+    color: white;
+    border-radius: 6px;
+    font-size: large;
+    font-family: cursive;
+    align-self: center;
+
+    &:active {
+      box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+      outline: 2px solid golden;
+      outline-offset: 1px;
+      outline: solid 2px white;
+    }
+  }
+}
+
+img {
+  border-radius: 6px;
+}
+
+.recipe-container {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  /* content-overflow: hidden; */
+
+  margin-top: 100px;
+}
+
+/* responsive code  */
+@media screen and (max-width: 800px) {
+  header nav {
+    flex-direction: column;
+  }
+
+  header nav form {
+    width: 80px;
+    margin-top: 20px;
+  }
+}
+
+/* make your code responsive
+make the dark mode work */
+
+.recipe-details {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  /* background-color: gold; */
+  background-color: gold;
+  border: 10px solid rgb(252, 139, 14);
+  border-radius: 16px;
+  width: 80%;
+  height: 60%;
+  font-size: 20px;
+  background-size: auto;
+  transition: all 0.5s ease-in-out;
+  overflow-y: scroll;
+}
+
+.recipe-details-content {
+  padding: 30px;
+}
+
+.recipeName {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.ingredientList {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.recipe-close-btn {
+  background-color: rgb(255, 0, 0);
+  border: none;
+  font-size: 18px;
+  padding: 9px;
+  position: absolute;
+  top: 2px;
+  right: 3px;
+}
+
+.recipe-close-btn:active {
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(253, 158, 49, 0.2);
+  outline-offset: 1px;
+  outline: solid 3px #fff;
+  transform: 2px 2s ease-in;
+}
+
+/*  adding scrollbar to a popup */
+
+.recipe-details::-webkit-scrollbar {
+  width: 10px;
+}
+
+.recipe-details::-webkit-scrollbar-thumb {
+  background: #614122;
+  /* background:rgb(252, 139, 14) ; */
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  /*  we are here using border radius but if we make scrollbar for body we won't be using a scroll bar */
+}
+
+.recipeInstructions {
+  line-height: 30px;
+  white-space: pre-line;
+}
+
+.recipeName,
+.ingredientList,
+.recipeInstructions {
+  margin-bottom: 10px;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(252, 139, 14);
+
+  /*  we are here using border radius but if we make scrollbar for body we won't be using a scroll bar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #e7bf98;
+}
+
+/* Add this to your stylesheet */
+
+/* For smaller screens (e.g., phones and tablets) */
+@media (max-width: 168px) {
+  .recipe-details-content {
+    width: 90%;
+    /* Ensure it takes up 90% of the screen width */
+    max-width: 400px;
+    /* Maximum width for readability */
+    min-width: 300px;
+    /* Prevent it from becoming too small */
+    margin: 0 auto;
+    /* Center the block */
+    padding: 15px;
+    /* Add padding for a neat look */
+    box-sizing: border-box;
+    /* Include padding in width */
+  }
+}
+/* 
+@media(max-width:412px){
+    .header nav{
+        display:flex ;
+    
+
+    }
+
+} */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .search-bar input {
+    width: calc(100% - 100px); /* Adjust the width based on button size */
+  }
+
+  .search-bar button {
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .moon-icon {
+    align-self: flex-end;
+  }
+}
+
+/* ----------HOME PAGE CONTENT STARTS BELOW------------------------- */
+
+/* Welcome Section */
+.text__wrapper {
+    /* display: flex; */
+  text-align: left;
+  /* margin-top: 50px; */
+  /* margin-left: 10px;
+  margin-right: 30px;
+  margin-bottom: 30px; */
+  flex-wrap: wrap; /* ensures responsiveness */
+align-items: center;
+  justify-content: space-between;
+  /* gap: 20px; */
+  padding: 10px;
+  margin: 50px 30px 30px;
+  /* max-width: 100%; */
+/* 
+   max-width: 500px;  */
+   border: 2px solid gold; 
+  border-radius: 10px;
+  background-color: #fdf5e6;
+}
+/* 
+#welcome .text__wrapper {
+  flex: 1 1 300px; /* grow and shrink with min width */
+  /* max-width: 500px;
+
+} */ 
+/* /* 
+#welcome .image__wrapper {
+ 
+  /* display: flex; */
+  /* gap: 5rem; */
+  /* padding: 0 10px; */
+  /* align-items: center; */
+  /* justify-content: space-around; */
+  /* justify-content: center;
+} */
+/*  */
+/* #welcome .image__wrapper img {
+    /* margin-right: 0;
+    margin-top: 20px; */
+  /* max-width: 1000px; */
+  /* width: 100%; */
+  /* height: 500px; */
+
+  /* border-radius: 10px; */
+/* }  */
+
+/* Welcome Text */
+#welcome h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #614d22;
+}
+.yesteryear-regular {
+  font-family: "Yesteryear", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#welcome p {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: orangered;
+}
+#welcome p small {
+  color: rgb(255, 149, 0);
+}
+
+/* Explore Recipes Button */
+#welcome button {
+  background-color: gold;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Explore Button */
+#welcome button:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+/* Dark Mode for Welcome Section */
+
+
+body.dark  {
+  background-color: black;
+  color: white;
+}
+
+body.dark #welcome button:hover {
+  background-color: gold;
+}
+
+/*--------------------------welcome image and container starts here-------------------------------------- */
+
+#welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+
+
+/* Adjust the welcome box so it doesn't stretch too wide */
+/*  */
+/* Wrapper for Welcome Section and Image */
+/* #welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 30px;
+    padding: 20px;
+} */
+
+/* Optional: Image container */
+/* #welcome-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+#welcome-image img {
+    width: 100%;
+    border-radius: 10px;
+} */
+
+
+
+  /*  -------------------------FOOTER STARTS HERE----------------------------------------- */
+  .footer__copyright{
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid orange ;
+    margin-top: 4rem;
+    background-color:gold;
+    color: #614222;
+}
+ 
+
+footer{
+   
+    padding: 12rem 0 0;
+    /* box-shadow: inset 0 1rem 1rem rgba(0, 0 ,0 ,0.2 ); 
+    margin-bottom:0.em; */
+
+} 
+
+.footer__socials{
+    margin-inline: auto;
+    width: fit-content;
+    margin-bottom:5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+
+}
+
+.footer__socials a{
+    background: var(--color-bg);
+    border-radius: 50%;
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:2rem ;
+    /* overflow: hidden; */
+}
+
+.footer__socials a:hover{
+    background:yellow;
+    color:white ;
+
+    
+    
+} 
+
+.footer__container{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 1rem;
+
+}
+
+footer h4{
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+}
+
+/* -------------other code starts from here--------------------------------- */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: linear-gradient(120deg, orange, gold,orangered); */
+    color: #614222;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+body.dark  {
+  background-color: black;
+  color: white;
+   
+}
+.heading{
+    text-align: center;
+    text-decoration: underline;
+   
+}
+form {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+form input {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    border: none;
+    background: rgb(255, 220, 23);
+    border: solid 2px black;
+    border-radius: 2rem;
+}
+
+form input.dark{
+    border: solid 2px white;
+} 
+
+.todo-button{
+    padding: 0.5rem;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+    border: none;
+    background:#614222;
+    
+
+    border-radius: 2rem
+}
+
+form button {
+    color: rgb(255, 200, 0);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3 ease;
+    margin-left: 0.5rem;
+}
+
+form button:hover {
+    color: white;
+    background:goldenrod;
+}
+form button:active {
+    color: white;
+    background:orangered;
+}
+
+
+
+.fa-plus-circle {
+    margin-top: 0.3rem;
+    margin-left: -8px;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+   
+}
+
+.todo {
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 2rem;
+     border: solid 2px black;
+}
+
+.todo li {
+    flex: 1;
+}
+
+.trash-btn, 
+.complete-btn {
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.complete-btn {
+    background: rgb(255, 200, 0);
+}
+
+.trash-btn {
+    border-top-right-radius: 1.75rem;
+    border-bottom-right-radius: 1.75rem;
+    background: rgb(171, 171, 171);
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, 
+.fa-check-circle {
+    pointer-events: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.slide {
+    transform: translateX(10rem);
+    opacity: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+     /* border: solid 2px black; */
+}
+
+select {
+    color:rgb(255, 200, 0);
+    width: 10rem;
+    height: 3.2rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background:rgb(255, 200, 0);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after {
+    background: white;
+    color: rgb(255, 200, 0);
+}
+
+
+
+/* ---------the responsive code-------------------- */
+
+/* Responsive for tablets and phones */
+@media (max-width: 1024px) {
+  header nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__items {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    width: 90%;
+    margin: auto;
+  }
+
+  .form input,
+  .todo-button,
+  .filter-todo {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .todo-list {
+    min-width: 90%;
+  }
+
+  .todo {
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .footer__socials {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__socials a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+
+  .nav__logo {
+    font-size: 1.2rem;
+  }
+
+  #welcome h1 {
+    font-size: 28px;
+  }
+
+  #welcome p {
+    font-size: 20px;
+  }
+
+  #welcome button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+
+  .todo {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .trash-btn,
+  .complete-btn {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+/*  planner date code starts here */
+
+
+
+.todo-date
+ {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* .todo-date {
+  width:2rem;
+} */
+
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 15px; 
+  flex-wrap: wrap;
+  gap: 0.5rem; */
+}
+
+.select{
+   border: #000 solid 2px;
+}
+
+.input-wrapper ,.select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.todo-date,
+.todo-input {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+.todo-date {
+  width: 222px;
+  
+}
+
+.todo-input {
+  width: 250px;
+}
+
+.todo-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-date-label {
+  background-color: orange;
+  border: solid 3px orange;
+  cursor: pointer;
+  margin-right: 0.2rem;
+  padding: 4px 6px;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.edit-btn,
+.save-btn {
+  color: orange;
+  background-color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.editing-input {
+  border: 2px solid #007bff;
+  background-color: #f0f8ff;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+

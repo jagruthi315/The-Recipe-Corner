@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Planner Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/recipe.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Yesteryear&display=swap");
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome cdn css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="planner.css" />
+    <title>The Recipe Corner</title>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <nav>
+        <h2><a href="index.html" class="nav__logo">The Recipe Corner</a></h2>
+
+        <form class="form">
+          <ul class="nav__items">
+            <li><a href="planner.html" class="planner">Planner</a></li>
+            <li>
+              <a href="testimonials.html" class="testimonials">Testimonials</a>
+            </li>
+            <li><a href="about.html" class="about">About</a></li>
+            <li><a href="contact.html" class="contact">Contact</a></li>
+          </ul>
+
+          <!-- <button id="nav-menu"  id="nav-toggle"  class="nav__menu">
+            <span class="material-symbols-outlined"> menu </span>
+          </button>
+
+          <button id="nav-close" class="nav__close">
+            <span class="material-symbols-outlined"> close </span>
+          </button> -->
+
+          <button id="theme-toggle" class="button2" class="nav__items">
+            <svg
+              xmlns="https://www.w3.org/2000/svg"
+              height="24px"
+              id="firstchild"
+              class="moon"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+              />
+            </svg>
+
+            <svg
+              xmlns="https://www.w3.org/2000/svg"
+              height="24px"
+              id="secondchild"
+              class="sun"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+              />
+            </svg>
+          </button>
+        </form>
+      </nav>
+    </header>
+
+    <main>
+      <br />
+      <br />
+      <h1 class="heading">The Recipe Planner</h1>
+      <br />
+      <br />
+
+      <form action="" class="todo-form">
+        <div class="input-wrapper">
+          <input type="date" class="todo-date" />
+          <input
+            type="text"
+            class="todo-input"
+            placeholder="plan here"
+            aria-placeholder="enter here"
+          />
+          <button class="todo-button" type="submit">
+            <i class="fas fa-plus-circle fa-lg"></i>
+          </button>
+        </div>
+
+        <div class="select">
+          <select name="todos" class="filter-todo">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="incomplete">Incomplete</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+    </main>
+   
+
+    <footer>
+      <div class="footer__copyright">
+        <small>
+          Copyright &copy; 2025 Jagruthi
+
+          <!-- &copy; this symbol is used to get that c inside the circle symbol  -->
+        </small>
+      </div>
+    </footer>
+     <script src="./navbar.js"></script>
+    <script src="./script.js"></script>
+    <script src="./planner.js"></script>
+    <script src="./darkmode.js"></script>
+  </body>
+</html>

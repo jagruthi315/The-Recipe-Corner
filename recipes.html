@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recipes Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/recipe.png" />
+<link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"
+    />
+    <title>The Recipe Corner</title>
+
+    <style>
+      #aiButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 3cm;
+        height: 3cm;
+        background-color: gold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      #aiButton img {
+        width: 1.8cm;
+        height: 1.8cm;
+        border-radius: 50%;
+      }
+
+      /* Hover Effect – Light & Dark themes */
+      #aiButton:hover {
+        transform: scale(1.1);
+        background-color: orange;
+      }
+
+      /* Dark Theme Button Base Color */
+      body.dark #aiButton {
+        background-color: gold;
+      }
+
+      /* Dark Theme Hover Effect */
+      body.dark #aiButton:hover {
+        background-color: orange;
+      }
+
+      /* Responsive Adjustments */
+      /* for navbar */
+
+      /* Hide nav items on smaller screens */
+      @media screen and (max-width: 991px) {
+        .nav__items {
+          display: none;
+        }
+
+        /* #center-image{
+        margin-right: 1cm;
+        } */
+      }
+
+      /* Show nav items on larger screens */
+      @media screen and (min-width: 992px) {
+        .nav__items {
+          display: flex; /* or inline-flex, or block, based on your design */
+          gap: 20px; /* optional spacing between links */
+          align-items: center;
+        }
+      }
+
+      /* for aibutton */
+      @media (max-width: 768px) {
+        #aiButton {
+          width: 3cm;
+          height: 3cm;
+        }
+        #aiButton img {
+          width: 1.8cm;
+          height: 1.8cm;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #aiButton {
+          width: 2.5cm;
+          height: 2.5cm;
+        }
+        #aiButton img {
+          width: 1.2cm;
+          height: 1.2cm;
+        }
+      }
+
+      /* Mobile & Tablet tweaks for aiButton */
+      @media (max-width: 769px) {
+        #aiButton {
+          bottom: 2cm;
+          right: 1.5cm;
+          width: 2.3cm;
+          height: 2.3cm;
+        }
+        #aiButton img {
+          width: 1.4cm;
+          height: 1.4cm;
+        }
+      }
+
+      @media (max-width: 480px) {
+        * {
+          text-align: center;
+        }
+        #aiButton {
+          bottom: 0.8cm;
+          right: 0.5cm;
+          width: 1.6cm;
+          height: 1.6cm;
+        }
+        #aiButton img {
+          width: 0.9cm;
+          height: 0.9cm;
+        }
+      }
+
+      /* responsive changes for the center-image */
+
+      /* Default: For desktops and larger screens */
+      #center-image {
+        width: 400px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Large mobiles / small tablets (up to 768px) */
+      @media screen and (max-width: 768px) {
+        #center-image {
+          width: 300px;
+        }
+      }
+
+      /* Medium mobiles (up to 600px) */
+      @media screen and (max-width: 600px) {
+        #center-image {
+          width: 240px;
+        }
+      }
+
+      /* Small mobiles (up to 400px) */
+      @media screen and (max-width: 321px) {
+        #center-image {
+          width: 190px;
+        }
+
+        .recipe-container {
+          margin: 5px;
+        }
+      }
+
+      /* Default: show "Search" text, hide the icon */
+      .button .search-text {
+        display: inline;
+        margin-right: 6px;
+      }
+
+      .button svg {
+        display: none;
+      }
+
+      /* On small phones: hide "Search" text, show the icon */
+      @media screen and (max-width: 426px) {
+        .button .search-text {
+          display: none;
+        }
+
+        .button svg {
+          display: inline;
+        }
+
+        .button {
+          padding: 10px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <nav>
+        <h2><a href="index.html" class="nav__logo">The Recipe Corner</a></h2>
+
+        <form class="form">
+          <ul class="nav__items">
+            <li><a href="planner.html" class="planner">Planner</a></li>
+            <li>
+              <a href="testimonials.html" class="testimonials">Testimonials</a>
+            </li>
+            <li><a href="about.html" class="about">About</a></li>
+            <li><a href="contact.html" class="contact">Contact</a></li>
+          </ul>
+
+          <!-- <button id="nav-menu"  id="nav-toggle"  class="nav__menu">
+            <span class="material-symbols-outlined"> menu </span>
+          </button>
+
+          <button id="nav-close" class="nav__close">
+            <span class="material-symbols-outlined"> close </span>
+          </button> -->
+
+          <form class="form">
+            <input
+              class="searchbox"
+              type="text"
+              placeholder="Search for recipies..."
+              class="searchbox"
+            />
+            <button type="submit" id="search" class="button">
+              <span class="search-text">Search</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20"
+                viewBox="0 0 24 24"
+                width="30"
+                fill="#888"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5
+             6.5 6.5 0 109.5 16c1.61 0 3.09-.59 
+             4.23-1.57l.27.28v.79l5 4.99L20.49 
+             19l-4.99-5zm-6 0C8.01 14 6 11.99 
+             6 9.5S8.01 5 10.5 5 15 7.01 15 
+             9.5 12.99 14 10.5 14z"
+                />
+              </svg>
+            </button>
+            <br />
+          </form>
+
+          <button id="theme-toggle" class="button2" class="nav__items">
+            <svg
+              xmlns="https://www.w3.org/2000/svg"
+              height="24px"
+              id="firstchild"
+              class="moon"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"
+              />
+            </svg>
+
+            <svg
+              xmlns="https://www.w3.org/2000/svg"
+              height="24px"
+              id="secondchild"
+              class="sun"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#5f6368"
+            >
+              <path
+                d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"
+              />
+            </svg>
+          </button>
+        </form>
+      </nav>
+      <!-- <nav>
+            <h2><a href="index.html" class="nav__logo">The Recipe Corner</a></h2>
+            <form class="form">
+                <input class="searchbox" type="text" placeholder="Search for recipies..." class="searchbox">
+                <button type="submit" id="search" class="button">Search</button>
+                <br>
+                 <button id="theme-toggle" class="button2">
+                    <svg xmlns="https://www.w3.org/2000/svg" height="24px" id="firstchild" class="moon"
+                        viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path
+                            d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" />
+                    </svg>
+
+                    <svg xmlns="https://www.w3.org/2000/svg" height="24px" id="secondchild" class="sun"
+                        viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                        <path
+                            d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
+                    </svg>
+
+                </button> -->
+
+      <!-- </nav> -->
+    </header>
+    <main>
+      <!-- <form class="form"><input class="searchbox" type="text" placeholder="Search for recipies..." class="searchbox">
+                <button type="submit" id="search" class="button">Search</button>
+                <br></form> -->
+
+      <section>
+        <div class="recipe-container">
+          <p class="searchrecipetext">
+            <i>search for your favourite recipes</i>
+          </p>
+          <img src="./images/recipe1.png" alt="Delicious food" id="center-image" />
+        </div>
+
+        <div class="recipe-details">
+          <button type="button" class="recipe-close-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#fff"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </button>
+          <div class="recipe-details-content"></div>
+        </div>
+      </section>
+    </main>
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+    <script src="darkmode.js"></script>
+
+    <script>
+      //  🔍Check if 'area' parameter exists in the URL -->
+      const urlParams = new URLSearchParams(window.location.search);
+      const areaFromFlag = urlParams.get("area");
+
+      if (areaFromFlag) {
+        // Fill the search box with the flag's title (area name)
+        searchBox.value = areaFromFlag;
+        // Trigger the search automatically
+        searchButton.click();
+      }
+    </script>
+
+    <!-- <a href="3latestai.html" id="aiButton">
+      <img src="boiledegg.png" alt="AI" />
+    </a> -->
+    <script>
+      document
+        .getElementById("aiButton")
+        .addEventListener("click", function () {
+          localStorage.setItem("cameFrom", window.location.pathname);
+        });
+    </script>
+
+    <script src="customRecipesTop500.js"></script>
+    <script src="darkmode.js"></script>
+    <script src="3latestai.html"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
