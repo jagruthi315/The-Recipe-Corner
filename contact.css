@@ -369,3 +369,39 @@ footer h4{
     color: var(--color-white);
     margin-bottom: 0.6rem;
 }
+
+
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav__items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: gold;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav__items.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    color: #614122;
+  }
+
+  .header nav {
+    position: relative;
+    flex-wrap: wrap;
+  }
+}
